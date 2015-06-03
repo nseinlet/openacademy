@@ -1,0 +1,33 @@
+<openerp>
+    <data>
+        <template id="index">
+            <t t-call="website.layout">
+                <t t-set="title">Academy</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <t t-foreach="teachers" t-as="teacher">
+                            <p><a t-attf-href="/academy/{{ slug(teacher) }}">
+                              <t t-esc="teacher.name"/></a>
+                            </p>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </template>
+        <template id="biography">
+            <t t-call="website.layout">
+                <t t-set="title">Academy</t>
+                <div class="oe_structure"/>
+                <div class="oe_structure">
+                    <div class="container">
+                        <h3 t-field="person.name"/>
+                        <p>Last modified: <i t-field="person.write_date" t-field-options='{"format": "long"}'/></p>
+                        <div t-field="person.biography"/>
+                    </div>
+                </div>
+                <div class="oe_structure"/>
+            </t>
+        </template>
+        
+    </data>
+</openerp>
