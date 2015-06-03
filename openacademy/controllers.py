@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from openerp import http
+from odoo import http
 
 class Academy(http.Controller):
     @http.route('/academy/academy/', auth='public', website=True)
