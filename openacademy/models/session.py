@@ -5,6 +5,7 @@ from odoo import models, fields, api, exceptions, _
     
 class Session(models.Model):
     _name = 'openacademy.session'
+    _order = 'course_id, instructor_id, start_date desc, id'
 
     name = fields.Char(required=True)
     start_date = fields.Date(default=fields.Date.today)
@@ -158,7 +159,7 @@ class Session(models.Model):
             query,
             (self.env.user.partner_id.id,)
         )
-        sess_ids = [rec.session_id for rec in self.env.cr.fetchall()]
+        sess_ids = [rec[0] for rec in self.env.cr.fetchall()]
         return [('id', 'in', sess_ids)]
         
     @api.depends('attendee_ids')

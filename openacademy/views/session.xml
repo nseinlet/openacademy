@@ -25,16 +25,19 @@
                                 <field name="course_id"/>
                                 <field name="name"/>
                                 <field name="instructor_id" context="{'default_instructor': True}"/>
+                                <field name="color" widget="color_picker"/>
                             </group>
                             <group string="Schedule">
                                 <field name="start_date"/>
                                 <field name="duration"/>
                                 <field name="seats"/>
+                                <field name="attendees_count"/>
                                 <field name="taken_seats" widget="progressbar"/>
                             </group>
                             <group string="Stats">
                                 <field name="is_participant"/>
                                 <field name="average_participation_rate"/>
+                                <field name="same_instructor_count"/>
                             </group>
                         </group>
                         <label for="attendee_ids"/>
