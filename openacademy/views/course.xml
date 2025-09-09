@@ -22,11 +22,11 @@
                             </page>
                             <page string="Sessions">
                                 <field name="session_ids">
-                                    <tree string="Registered sessions">
+                                    <list string="Registered sessions">
                                         <field name="name"/>
                                         <field name="instructor_id"/>
                                         <field name="same_instructor_count"/>
-                                    </tree>
+                                    </list>
                                 </field>
                             </page>
                         </notebook>
@@ -46,25 +46,24 @@
                             domain="[('responsible_id', '=', uid)]"/>
                     <filter name="attended_ones" string="Attended courses"
                             domain="[('attended', '=', True)]"/>
-                    <group string="Group By">
-                        <filter name="by_responsible" string="Responsible"
-                                context="{'group_by': 'responsible_id'}"/>
+                    <group>
+                        <filter name="by_responsible" string="Responsible" context="{'group_by': 'responsible_id'}"/>
                     </group>
                 </search>
             </field>
         </record>
         
         <!-- override the automatically generated list view for courses -->
-        <record model="ir.ui.view" id="course_tree_view">
-            <field name="name">course.tree</field>
+        <record model="ir.ui.view" id="course_list_view">
+            <field name="name">course.list</field>
             <field name="model">openacademy.course</field>
             <field name="arch" type="xml">
-                <tree string="Course Tree">
+                <list string="Course list">
                     <field name="name"/>
                     <field name="responsible_id"/>
                     <field name="session_filled_seats"/>
                     <field name="attended"/>
-                </tree>
+                </list>
             </field>
         </record>
     </data>

@@ -1,4 +1,4 @@
-<openerp>
+<odoo>
 <data>
     <report
         id="report_session"
@@ -27,4 +27,4 @@
         </t>
     </template>
 </data>
-</openerp>
+</odoo>

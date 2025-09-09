@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
- <openerp>
+ <odoo>
     <data>
         <!-- Add instructor field to existing view -->
         <record model="ir.ui.view" id="partner_instructor_form_view">
@@ -21,7 +21,7 @@
         <record model="ir.actions.act_window" id="contact_list_action">
             <field name="name">Contacts</field>
             <field name="res_model">res.partner</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
         <menuitem id="configuration_menu" name="Configuration"
                   parent="main_openacademy_menu"/>
@@ -31,7 +31,7 @@
         <record model="ir.actions.act_window" id="contact_cat_list_action">
             <field name="name">Contact Tags</field>
             <field name="res_model">res.partner.category</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
         <menuitem id="contact_cat_menu" name="Contact Tags"
                   parent="configuration_menu"
@@ -45,4 +45,4 @@
         </record>
                   
     </data>
-</openerp>
+</odoo>

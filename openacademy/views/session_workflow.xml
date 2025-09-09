@@ -1,4 +1,4 @@
-<openerp>
+<odoo>
     <data>
         <record model="workflow" id="wkf_session">
             <field name="name">OpenAcademy sessions workflow</field>
@@ -82,4 +82,4 @@ recs.action_done()
             <field name="condition">taken_seats &gt; 50</field>
         </record>
     </data>
-</openerp>
+</odoo>

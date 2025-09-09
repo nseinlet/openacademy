@@ -1,4 +1,4 @@
-<openerp>
+<odoo>
     <data>
         <template id="index">
             <t t-call="website.layout">
@@ -30,4 +30,4 @@
         </template>
         
     </data>
-</openerp>
+</odoo>

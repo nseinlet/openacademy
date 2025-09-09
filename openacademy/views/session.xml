@@ -10,12 +10,12 @@
                      <header>
                         <button name="action_draft" type="object"
                                 string="Reset to draft"
-                                states="confirmed,done"/>
+                                invisible="state not in ('confirmed','done')"/>
                         <button name="action_confirm" type="object"
-                                string="Confirm" states="draft"
+                                string="Confirm" invisible="state != 'draft'"
                                 class="oe_highlight"/>
                         <button name="action_done" type="object"
-                                string="Mark as done" states="confirmed"
+                                string="Mark as done" invisible="state != 'confirmed'"
                                 class="oe_highlight"/>
                         <field name="state" widget="statusbar"/>
                     </header>
@@ -47,18 +47,18 @@
              </field>
          </record>
 
-         <!-- session tree/list view -->
-        <record model="ir.ui.view" id="session_tree_view">
-            <field name="name">session.tree</field>
+         <!-- session list/list view -->
+        <record model="ir.ui.view" id="session_list_view">
+            <field name="name">session.list</field>
             <field name="model">openacademy.session</field>
             <field name="arch" type="xml">
-                <tree string="Session Tree">
+                <list string="Session list">
                     <field name="name"/>
                     <field name="course_id"/>
                     <field name="is_participant"/>
                     <field name="duration" invisible="1"/>
                     <field name="taken_seats" widget="progressbar"/>
-                </tree>
+                </list>
             </field>
         </record>
         
