@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fake_course_instructor" model="populate.blueprint">
+        <field name="name">somecourses</field>
+        <field name="definition_xml" type="xml">
+            <create model="res.partner" count="1000" id="openacademy_instructors">
+                <field name="name" generator="fake.name"/>
+                <field name="instructor"/>
+            </create>
+
+            <create model="res.partner" count="20000" id="openacademy_students">
+                <field name="name" generator="fake.name"/>
+                <field name="instructor" eval="False"/>
+            </create>
+
+            <create model="openacademy.course" count="1000" id="openacademy_courses">
+                <field name="name" generator="fake.isbn13" unique="True"/>
+                <field name="description" generator="fake.job"/>
+            </create>
+
+            <create model="openacademy.session" count="10000" id="openacademy_sessions">
+                <field name="name" generator="fake.job"/>
+                <field name="course_id"/>
+                <field name="instructor_id" domain="[('instructor', '=', True)]"/>
+                <field name="start_date" generator="temporal.date"/>
+                <field name="duration" start="1" end="10"/>
+                <field name="seats" start="10" end="15"/>
+                <field name="attendee_ids" count="10" domain="[('instructor', '=', False)]"/>
+            </create>
+        </field>
+    </record>
+</odoo>

@@ -2,7 +2,6 @@
 from datetime import timedelta
 
 from odoo import models, fields, api, _
-from odoo.tools import populate
 
 
 class Course(models.Model):
@@ -45,14 +44,14 @@ class Course(models.Model):
 
     def _search_attended(self, operator, value):
         return [('session_ids.is_participant', operator, value)]
-        
-    _sql_constraints = [
-        ('name_description_check',
-         'CHECK(name != description)',
-         "The title of the course should not be the description"),
+    
+    _name_description_check_diff = models.Constraint(
+        'CHECK(name != description)',
+        "The title of the course should not be the description.",
+    )
 
-        ('name_unique',
+    _name_uniqueness = models.Constraint(
          'UNIQUE(name)',
-         "The course title must be unique"),
-    ]
+         "The course title must be unique.",
+    )
     

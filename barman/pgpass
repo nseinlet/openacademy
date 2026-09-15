@@ -1,0 +1,2 @@
+#hostname:port:database:username:password
+*:5432:*:barman_odoo:the_password
