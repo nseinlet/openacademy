@@ -3,7 +3,7 @@ from OdooLocust import OdooLocustUser, crm
 
 class OdooCom(OdooLocustUser.OdooLocustUser):
     host = "localhost"
-    database = "16open"
+    database = "20.0open"
     login = "admin"
     password = "admin"
     port = 8069

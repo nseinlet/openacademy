@@ -1,0 +1,7 @@
+id,name,model_id,group_id/id,operation,domain
+
+course_manager,course manager,openacademy.course,group_manager,crud,
+course_read_all,course all,openacademy.course,,r,
+session_manager,session manager,openacademy.session,group_manager,crud,
+session_read_all,session all,openacademy.session,,r,
+openacademy.access_openacademy_wizard,access_openacademy_wizard,openacademy.wizard,base.group_user,r,

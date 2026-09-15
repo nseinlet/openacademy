@@ -4,7 +4,7 @@
             <field name="name">OpenAcademy / Manager</field>
         </record>
         
-        <record id="only_responsible_can_modify" model="ir.rule">
+        <!-- <record id="only_responsible_can_modify" model="ir.rule">
             <field name="name">Only Responsible can modify Course</field>
             <field name="model_id" ref="model_openacademy_course"/>
             <field name="groups" eval="[(4, ref('openacademy.group_manager'))]"/>
@@ -42,6 +42,6 @@
             <field name="domain_force">
                 [('is_participant', '=', True)]
             </field>
-        </record>
+        </record> -->
     </data>
 </odoo>
